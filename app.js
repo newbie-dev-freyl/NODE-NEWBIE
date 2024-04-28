@@ -39,6 +39,12 @@ const server = http.createServer((req, res) => {
             mainContentHtml = mapProducts;
             res.statusCode = 200
             res.setHeader('Content-type', 'text/html')
+        
+        } else if (query.id > Object.keys(products.parseJsonProducts).length - 1){ 
+            mainContentHtml = pages.pagesArray[4];
+            res.statusCode = 404
+            res.setHeader('Content-type', 'text/html')
+
         } else {
             let prod = products.parseJsonProducts[query.id - 1]
             let mapProductsDetails = products.productsArray(pages.pagesArray[3], prod)
@@ -48,9 +54,7 @@ const server = http.createServer((req, res) => {
         }
         
     } else  {
-        query.id = null
-        console.log(query.id)
-        mainContentHtml = pages.pagesArray[3];
+        mainContentHtml = pages.pagesArray[4];
         res.statusCode = 404
         res.setHeader('Content-type', 'text/html')
     } 
