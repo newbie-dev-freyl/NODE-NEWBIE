@@ -3,9 +3,9 @@ const fs = require('fs')
 const http = require('http')
 const url = require('url')
 // LOCAL EXPORTS
-const partials = require('./templates/partials/partials.js')
-const pages = require('./templates/pages/pages.js')
-const products = require('./templates/pages/products.js')
+const partials = require('./templates/partials/js/partials.js')
+const pages = require('./templates/pages/js/pages.js')
+const products = require('./templates/pages/js/products.js')
 // FILE BASE ROUTING
 let host = 'localhost'
 let port = 5000
